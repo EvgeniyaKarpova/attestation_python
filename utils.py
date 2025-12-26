@@ -47,11 +47,6 @@ def validate_category(category_str: str) -> str:
     if not isinstance(category_str, str):
         raise ValueError("Категория должна быть строкой")
 
-    # category_str = category_str.strip()
-    # if not category_str:
-    #     raise ValueError("Категория не может быть пустой")
-
-    # Опционально: запретить спецсимволы (оставить только буквы, цифры, пробелы, дефисы)
     if re.search(r"[^а-яА-Яa-zA-Z0-9\s\-]", category_str):
         raise ValueError("Категория может содержать только буквы, цифры, пробелы и дефисы")
 
